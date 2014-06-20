@@ -163,7 +163,7 @@ FUNCALL the function must be written in the #' form, not the ' form."
                             ,(memoizing-body '(args)
                                              (second binding) (fourth binding)
                                              (third binding)
-                                             `(apply ',(first binding) args))))
+                                             `(apply #',(first binding) args))))
                   bindings))
          (progn ,@body)))))
 
