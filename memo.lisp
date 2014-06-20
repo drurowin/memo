@@ -137,7 +137,7 @@ documentation strings."
                   `(list ,@vars))))
     `(let ((,fetch (gethash ,vars ,memo-table ,default)))
        (if (eq ,fetch ,default)
-           (setf (getash ,vars ,memo-table)
+           (setf (gethash ,vars ,memo-table)
                  ,body)
            ,fetch))))
 
