@@ -43,7 +43,8 @@
   (:export #:defmemo
            #:lambda/memo
            #:with-memoization)
-  (:local-nicknames (#:sequence #:org.drurowin.sequence))
+  (:import-from :org.drurowin.sequence
+                #:collect)
   (:documentation "Function memoization."))
 
 (in-package :org.drurowin.memo)
@@ -111,7 +112,7 @@ documentation strings."
   (gensym (apply #'format nil control-string args)))
 
 (defun frob-lambda-list (args)
-  (sequence:collect (args)
+  (collect (args)
     (let ((mode nil))
       (dolist (arg args (args))
         (case arg
