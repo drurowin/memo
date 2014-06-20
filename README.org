@@ -1,0 +1,30 @@
+#+TITLE: MEMO
+
+* About
+MEMO provides macros for defining functions that memoize calls to them.  It also provides the
+ability to locally memoize existing functions that were specially and lexically bound.
+
+Maintenance of memoization tables is provided by the garbage collector.
+
+** API
+\[Macro]\\
+*defmemo* /name/ /args/ &body /body/
+
+Define a function /name/ that memoizes calls based on its argument list.
+
+\[Macro]\\
+*lambda-memo* /args/ &body /body/
+
+Define an anonymous function that memoizes calls based on its argument list.
+
+\[Macro]\\
+*with-memoization* /functions/ &body /body/
+
+Locally memoize listed /functions/ in the lexical scope of /body/.  Calls to these functions must
+either appear in the function position or be named with sharp-quote, not quote.
+
+** Dependencies
+- [[https://github.com/drurowin/sequence][ORG.DRUROWIN.SEQUENCE]]
+
+* License
+MIT.  Basically, do with it what you wish so long as you include the copyright notice.
